@@ -46,7 +46,7 @@
 
       <section class="bottom flex flex--align-center flex--column">
         <h2 data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="300">RSVP</h2>
-        <form class="flex flex--align-center flex--column" name="contact" method="POST" data-netlify="true" >
+        <form id="frm" class="flex flex--align-center flex--column" name="contact" method="POST" data-netlify="true" >
           <input required name="name" type="text" placeholder="Type your name" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="300" >
 
           <div class="radio-group">
@@ -70,5 +70,14 @@
     <script>
       AOS.init();
     </script>
-	</body>
+	<script>
+	$('#frm').validate({
+	rules: {
+  	requestType: {
+    	required: true
+    }
+  }
+});
+		</script>
+ </body>
 </html>
