@@ -121,24 +121,28 @@ form {
 
 .radio-group {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin: 1rem 0; }
 
-.radio_item {
-  display: none; }
+.input-hidden {
+  position: absolute;
+  left: -9999px; }
 
-.label_item {
-  margin: 1rem 0;
-  transition: all .3s;
-  border: 1rem solid white; }
-
-.radio_item:hover + label {
-  opacity: .5; }
-
-.radio_item:checked + label {
-  border: 1rem solid #F4DB39; }
-
-label {
+/* Stuff after this is only to make things more pretty */
+input[type=radio] + label > img {
+  transition: 500ms all;
+  border: 1rem solid #fff;
+  margin: 2rem;
+  width: calc(100% - 6rem);
   cursor: pointer; }
+
+input[type=radio]:checked + label > img {
+  border: 1rem solid #F4DB39;
+  transform: rotateZ(-10deg) rotateX(10deg); }
+
+input[type=radio]:hover + label > img {
+  opacity: .5rem;
+  transform: rotateZ(-10deg) rotateX(10deg); }
 
 input[type=text] {
   width: 100%;
@@ -158,19 +162,19 @@ input[type=text] {
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: #EA3628; }
+  color: black; }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: #EA3628; }
+  color: black; }
 
 :-ms-input-placeholder {
   /* IE 10+ */
-  color: #EA3628; }
+  color: black; }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  color: #EA3628; }
+  color: black; }
 
 input[type=submit] {
   width: auto;
@@ -189,4 +193,10 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #bda50a; }
 
-/*# sourceMappingURL=main.css.map */
+.error {
+  background-color: #EA3628;
+  color: black;
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  width: calc(100% - 6rem);
+  text-align: center; }

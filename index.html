@@ -49,17 +49,31 @@
         <form id="form" class="flex flex--align-center flex--column" name="contact" method="POST" data-netlify="true" >
           <input required name="name" type="text" placeholder="Type your name" data-aos="fade-up" data-aos-easing="ease-in" data-aos-duration="300" >
 
-          <div class="radio-group required"
-		<label for='RSVP'>Select one:</label>
-            <!--RADIO 1-->
-            <input  type="radio" class="radio_item" value="No, not coming." name="RSVP" id="radio1" >
-            <label class="label_item" for="radio1" data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="300"> <img src="imgs/image-no.png" alt="No"> </label>
+          <div class="flex flex--column flex--align-center">
 
-            <!--RADIO 2-->
-            <input type="radio" class="radio_item" value="Yes, coming" name="RSVP" id="radio2">
-            <label class="label_item trigger" for="radio2" data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="300"> <img src="imgs/image-yes.png" alt="Yes"> </label>
+            <div class="radio-group flex flex--align-center flex--column">
+             <div class="flex flex--justify-center">
+              <input
+                type="radio" name="rsvp"
+                id="no" class="input-hidden" required/>
+              <label for="no">
+                <img
+                  src="imgs/image-no.png"
+                  alt="I can't make it..." />
+              </label>
+
+              <input
+                type="radio" name="rsvp"
+                id="yes" class="input-hidden"  required/>
+              <label for="yes">
+                <img
+                  src="imgs/image-yes.png"
+                  alt="Yes, I am coming!" />
+              </label>
+             </div>
+           </div>
           </div>
-		
+
           <input class="submit animated infinite heartBeat" type="submit" value="Submit" data-aos="zoom-in" data-aos-easing="ease-in" data-aos-duration="300" data-aos-anchor=".trigger" data-aos-delay="1000">
         </form>
       </section>
@@ -87,19 +101,19 @@
             required:"Please select one!"
           }
         },
-        errorPlacement: function(error, element) 
+        errorPlacement: function(error, element)
         {
-            if ( element.is(":radio") ) 
+            if ( element.is(":radio") )
             {
                 error.appendTo( element.parents('.radio-group') );
             }
-            else 
-            { // This is the default behavior 
+            else
+            { // This is the default behavior
                 error.insertAfter( element );
             }
          }
       });
-    
+
   });
 	</script>
  </body>
